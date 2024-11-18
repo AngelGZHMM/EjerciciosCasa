@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.boletines.Boletin3_Componentes.MainApp
+import com.example.boletines.EjercicioManue.Navegacion.navigation
 import com.example.boletines.EjerciciosRandoms.MYApp2_0
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MYApp2_0()
+           navigation()
 
 
 

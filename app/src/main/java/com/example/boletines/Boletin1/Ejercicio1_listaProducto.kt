@@ -24,18 +24,15 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import coil.compose.AsyncImage
 
-
-import java.net.URL
-
 data class Producto(
-    val nombre : String,
-    val precio : Double,
-    val imagen : String)
+    val nombre: String,
+    val precio: Float,
+    val imagen: String)
 
 val listaProductos = listOf(
-    Producto("Producto1", 10.0,"https://loremflickr.com/400/400/seville?lock=1"),
-    Producto("Producto2", 20.0, "https://loremflickr.com/400/400/seville?lock=2"),
-    Producto("Producto3", 30.0, "https://loremflickr.com/400/400/seville?lock=3")
+    Producto("Producto1", 10.0f,"https://loremflickr.com/400/400/seville?lock=1"),
+    Producto("Producto2", 20.0f, "https://loremflickr.com/400/400/seville?lock=2"),
+    Producto("Producto3", 30.0f, "https://loremflickr.com/400/400/seville?lock=3")
 )
 
 @Composable
