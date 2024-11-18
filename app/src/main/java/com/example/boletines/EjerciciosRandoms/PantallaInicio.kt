@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,32 +33,16 @@ import androidx.compose.ui.unit.dp
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun pantallaInicio(volver: () -> Unit) {
+    Scaffold(floatingActionButton = { botonFlotante(volver) }) { margen ->
 
 
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.BottomEnd
-    ) {
-        Button(
-            onClick = volver,
-            elevation = ButtonDefaults.buttonElevation(20.dp),
-            modifier = Modifier.padding(bottom = 60.dp, end = 8.dp)
-
-        ) {
-            Icon(
-                Icons.Default.ArrowBack,
-                contentDescription = "Volver"
-            )
 
 
-        }
-
-    }
     var selectorColor by remember { mutableStateOf(Color.Black) }
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 30.dp),
+            .padding(margen).padding(top=16.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Top
     ) {
         Box(
@@ -80,7 +65,7 @@ fun pantallaInicio(volver: () -> Unit) {
             onselectedColor = { selectorColor = it })
     }
 }
-
+}
 @Composable
 fun ListColors(colores: List<Color>, onselectedColor: (Color) -> Unit) {
     Column {
